@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int rockScissorsPaper();
+int winLoseDraw(int player, int opponent);
+
+int main()
+{
+ int x, y, z;
+
+ do
+ {
+  printf("가위(1), 바위(2), 보(3) 입력, 끝내려면 0 : ");
+  scanf("%d", &x);
+
+  if(x > 3 || x < 0)
+   continue;
+  else if(x == 0)
+   return;
+
+  y = rockScissorsPaper();
+
+  printf("당신 = %d, 컴퓨터 = %d : ", x, y);
+
+  z = winLoseDraw(x, y);
+
+  if(z == 1)
+   printf("이겼습니다.\n");
+  else if(z == -1)
+   printf("졌습니다.\n");
+  else
+   printf("비겼습니다.\n");
+
+ }while(x > 0 || x <= 3);
+
+ srand((unsigned int)time(0));
+
+ return 0;
+}
+
+int rockScissorsPaper()
+{
+ return rand() % 3 + 1;
+}
+
+}
+}
+}
+}
+}
+}
